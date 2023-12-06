@@ -1,0 +1,60 @@
+# GitHub Action for generating a contribution graph with a snake eating your contributions.
+name: Generate Snake
+
+# Controls when the action will run.
+on:
+  schedule:
+    # every 12 hours
+    - cron: "0 */12 * * *"
+
+  # This command allows us to run the Action automatically from the Actions tab.
+  workflow_dispatch:
+
+  # Also run on every push on the main branch
+  push:
+    branches:
+      - main
+
+# The sequence of runs in this workflow:
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v3
+
+      - name: Generate the snake files in './dist/'
+        uses: Platane/snk@v3
+        id: snake-gif
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Show build status
+        run: git status
+
+      - name: Update README with Snake Game
+        run: |
+          echo "<picture>" > snake_picture.txt
+          echo "  <source media=\"(prefers-color-scheme: dark)\" srcset=\"dist/github-contribution-grid-snake-dark.svg?palette=github-dark\">" >> snake_picture.txt
+          echo "  <source media=\"(prefers-color-scheme: light)\" srcset=\"dist/github-contribution-grid-snake.svg\">" >> snake_picture.txt
+          echo "  <img alt=\"Shows an illustrated sun in light mode and a moon with stars in dark mode.\" src=\"dist/github-contribution-grid-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9\">" >> snake_picture.txt
+          echo "</picture>" >> snake_picture.txt
+          sed -i '/<picture>/,/<\/picture>/d' README.md
+          cat snake_picture.txt >> README.md
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add README.md
+          git commit -m "Update README with Snake Game"
+          git push
