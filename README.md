@@ -16,7 +16,7 @@
     <br/>
     💫 Fun fact: I am a Web3 content creator; view my YouTube channel @thanosswrld
     <br/>
-    ✨ Ask me about y3k, e^mc, my portfolio, my Bitcoin Lightning Network nodes... or anything [here](https://superlink.io/thanos)
+    ✨ Ask me about y3k, e^mc, my portfolio, my Bitcoin Lightning Network nodes... or anything (https://superlink.io/thanos)
 </div>
 
 <div align="center">
