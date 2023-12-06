@@ -10,13 +10,13 @@
 <br/>
 
 <div align="center">
-    🚀 I'm currently working on a decentralized Ethereum network social app 'e^mc' & a live audio show platform
+    🚀 I'm currently developing a decentralized Ethereum network live audio social application titled 'e^mc'
     <br/>
     🪐 I'm currently learning Google Cloud Skills Boost Path: Machine Learning Engineer
     <br/>
     💫 Fun fact: I am a Web3 content creator; view my YouTube channel @thanosswrld
     <br/>
-    ✨ Ask me about y3k, e^mc, my portfolio, melanin academy... or anything [here](https://superlink.io/thanos)
+    ✨ Ask me about y3k, e^mc, my portfolio, my Bitcoin Lightning Network nodes... or anything [here](https://superlink.io/thanos)
 </div>
 
 <div align="center">
