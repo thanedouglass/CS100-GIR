@@ -37,8 +37,8 @@
 <br/> 
 <div align="center">
     <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=figma,github,python,ae,blender,discord,gcp,gmail,java" /><br> 
-        <img src="https://skillicons.dev/icons?i=svg,bootstrap,instagram,twitter,raspberrypi,linux,ps,py,ae,ai,svg,wordpress,vscode,git" />
+        <img src="https://skillicons.dev/icons?i=figma,github,python,git,blender,discord,gcp,gmail,java" /><br> 
+        <img src="https://skillicons.dev/icons?i=svg,bootstrap,raspberrypi,linux,pp,ps,ae,ai,wordpress,vscode" />
     </a>
 </div>
 
